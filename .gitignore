@@ -1,0 +1,217 @@
+# ===================================
+# Python / Backend
+# ===================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ===================================
+# Node.js / Frontend
+# ===================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+.vercel
+
+# Build outputs
+build/
+dist/
+.cache/
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# ===================================
+# Environment Variables
+# ===================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# ===================================
+# IDE / Editors
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.code-workspace
+
+# ===================================
+# OS Files
+# ===================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===================================
+# Jupyter Notebook
+# ===================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ===================================
+# ML / Data
+# ===================================
+# Dataset (too large for git)
+ml-training/data/PlantVillage/
+ml-training/data/*.zip
+ml-training/data/*.tar.gz
+ml-training/data/*.rar
+
+# Prediction history
+backend/data/prediction_history.json
+backend/data/*.json
+
+# Models (uncomment if model is too large for git)
+# ml-training/models/*.h5
+# ml-training/models/*.pb
+# ml-training/models/*.pth
+# ml-training/models/*.onnx
+
+# Training outputs
+ml-training/logs/
+ml-training/checkpoints/
+ml-training/tensorboard/
+
+# ===================================
+# Logs
+# ===================================
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===================================
+# Temporary Files
+# ===================================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+temp/
+tmp/
+.temp/
+.tmp/
+
+# ===================================
+# Documentation
+# ===================================
+# Uncomment if you don't want to track generated docs
+# docs/_build/
+# site/
+
+# ===================================
+# Deployment
+# ===================================
+.vercel
+.netlify
+.firebase/
+.serverless/
+
+# ===================================
+# Database
+# ===================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ===================================
+# Secrets / Keys
+# ===================================
+*.pem
+*.key
+*.cert
+secrets/
+.secrets/
+
+# ===================================
+# Package Manager Locks (optional)
+# ===================================
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ===================================
+# Project Specific
+# ===================================
+# Add any project-specific files here
+confusion_matrix.png.backup
+*.backup
