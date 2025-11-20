@@ -294,7 +294,7 @@ export default function PredictPage() {
                           {!loading && (
                             <button
                               onClick={handleClear}
-                              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors"
+                              className="absolute top-2 right-2 bg-red-500 text-black p-2 rounded-full hover:bg-red-600 transition-colors"
                             >
                               <X className="w-5 h-5" />
                             </button>

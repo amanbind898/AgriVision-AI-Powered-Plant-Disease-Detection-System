@@ -38,13 +38,13 @@ export default function PredictionCard({ prediction }: PredictionCardProps) {
             <h3 className={`text-2xl font-bold mb-2 ${is_healthy ? 'text-green-900' : 'text-red-900'}`}>
               {is_healthy ? t.predict.result.healthy : t.predict.result.diseased}
             </h3>
-            <p className="text-lg mb-1">
+            <p className="text-lg mb-1 text-black">
               <span className="font-semibold">{t.predict.result.plant}:</span> {plant_name}
             </p>
-            <p className="text-lg mb-1">
+            <p className="text-lg mb-1 text-black  ">
               <span className="font-semibold">{is_healthy ? t.predict.result.status : t.predict.result.disease}:</span> {disease_name}
             </p>
-            <p className="text-lg">
+            <p className="text-lg text-black">
               <span className="font-semibold">{t.predict.result.confidence}:</span> {confidence.toFixed(2)}%
             </p>
           </div>
