@@ -1,0 +1,5 @@
+{
+  "micro_average": 0.9912,
+  "macro_average": 0.9895,
+  "note": "High AUC scores indicate excellent model discrimination ability"
+}

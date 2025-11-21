@@ -126,6 +126,10 @@ Desktop.ini
 # ===================================
 # Dataset (too large for git)
 ml-training/data/PlantVillage/
+ml-training/data/New Plant Diseases Dataset(Augmented)/
+ml-training/data/test/*.JPG
+ml-training/data/test/*.jpg
+ml-training/data/test/*.png
 ml-training/data/*.zip
 ml-training/data/*.tar.gz
 ml-training/data/*.rar

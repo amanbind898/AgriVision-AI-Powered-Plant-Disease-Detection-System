@@ -13,7 +13,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(current_dir))
 sys.path.insert(0, parent_dir)
 
-from models.disease_model import DiseaseModel
+from models.disease_model_pytorch import DiseaseModel
 from utils.recommendations import get_treatment_recommendations
 
 router = APIRouter()

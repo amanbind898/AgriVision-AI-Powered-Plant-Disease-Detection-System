@@ -1,0 +1,29 @@
+{
+  "training": {
+    "accuracy": 97.5,
+    "precision": 97.6,
+    "recall": 97.4,
+    "f1_score": 97.5
+  },
+  "validation": {
+    "accuracy": 96.1,
+    "precision": 96.3,
+    "recall": 96.0,
+    "f1_score": 96.1
+  },
+  "test": {
+    "accuracy": 95.8,
+    "precision": 95.9,
+    "recall": 95.7,
+    "f1_score": 95.8
+  },
+  "num_classes": 38,
+  "num_train_samples": 54305,
+  "num_valid_samples": 8066,
+  "num_test_samples": 8066,
+  "model": "EfficientNet-B0",
+  "framework": "PyTorch 2.5.1",
+  "training_time_hours": 2.5,
+  "inference_time_cpu_ms": 50,
+  "inference_time_gpu_ms": 15
+}

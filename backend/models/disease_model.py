@@ -29,19 +29,67 @@ class DiseaseModel:
         self.class_names = self.CLASS_NAMES
         self.model = self._load_model()
     
+    def _build_model(self):
+        """Build the model architecture"""
+        model = tf.keras.Sequential([
+            tf.keras.layers.InputLayer(input_shape=(128, 128, 3)),
+            
+            # Block 1
+            tf.keras.layers.Conv2D(32, (3, 3), padding='same', activation='relu'),
+            tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            
+            # Block 2
+            tf.keras.layers.Conv2D(64, (3, 3), padding='same', activation='relu'),
+            tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            
+            # Block 3
+            tf.keras.layers.Conv2D(128, (3, 3), padding='same', activation='relu'),
+            tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            
+            # Block 4
+            tf.keras.layers.Conv2D(256, (3, 3), padding='same', activation='relu'),
+            tf.keras.layers.Conv2D(256, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            
+            # Block 5
+            tf.keras.layers.Conv2D(512, (3, 3), padding='same', activation='relu'),
+            tf.keras.layers.Conv2D(512, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            
+            # Classifier
+            tf.keras.layers.Dropout(0.25),
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(1500, activation='relu'),
+            tf.keras.layers.Dropout(0.4),
+            tf.keras.layers.Dense(38, activation='softmax')
+        ])
+        return model
+    
     def _load_model(self):
         """Load the trained model"""
         try:
-            model = tf.keras.models.load_model(self.model_path, compile=False)
+            # Try standard loading first
+            try:
+                model = tf.keras.models.load_model(self.model_path, compile=False)
+                print(f"[OK] Model loaded successfully from {self.model_path}")
+            except (TypeError, AttributeError) as e:
+                # Handle compatibility issues by rebuilding and loading weights
+                print(f"[WARNING] Compatibility issue detected, loading weights only...")
+                model = self._build_model()
+                model.load_weights(self.model_path)
+                print(f"[OK] Model weights loaded successfully from {self.model_path}")
+            
             model.compile(
                 optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
                 loss='categorical_crossentropy',
                 metrics=['accuracy']
             )
-            print(f"✅ Model loaded successfully from {self.model_path}")
             return model
         except Exception as e:
-            print(f"❌ Error loading model: {e}")
+            print(f"[ERROR] Error loading model: {e}")
             raise
     
     def preprocess_image(self, image: Image.Image) -> np.ndarray:

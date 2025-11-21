@@ -86,23 +86,23 @@ export default function ChatPage() {
       ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-8 px-4">
+    <div className="bg-gradient-to-br from-green-50 to-emerald-100 py-4 sm:py-8 px-2 sm:px-4">
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="text-center mb-4 sm:mb-8"
         >
-          <div className="flex justify-center mb-4">
-            <div className="bg-green-600 p-4 rounded-full">
-              <MessageSquare className="w-8 h-8 text-white" />
+          <div className="flex justify-center mb-3 sm:mb-4">
+            <div className="bg-green-600 p-3 sm:p-4 rounded-full">
+              <MessageSquare className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4 px-2">
             {t.chat.chatPage.title}
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 px-2">
             {t.chat.chatPage.subtitle}
           </p>
         </motion.div>
@@ -157,7 +157,7 @@ export default function ChatPage() {
           )}
 
           {/* Messages */}
-          <div className="h-[500px] overflow-y-auto p-6 space-y-4">
+          <div className="h-[400px] sm:h-[500px] overflow-y-auto p-3 sm:p-6 space-y-3 sm:space-y-4">
             {messages.map((message, index) => (
               <motion.div
                 key={index}
@@ -166,14 +166,14 @@ export default function ChatPage() {
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[75%] rounded-2xl p-5 ${
+                  className={`max-w-[85%] sm:max-w-[75%] rounded-2xl p-3 sm:p-5 ${
                     message.role === 'user'
                       ? 'bg-green-600 text-white'
                       : 'bg-gray-50 text-gray-900 border border-gray-200 shadow-sm'
                   }`}
                 >
                   <div 
-                    className="prose prose-sm max-w-none"
+                    className="prose prose-sm max-w-none text-sm sm:text-base"
                     dangerouslySetInnerHTML={{ 
                       __html: formatMessage(message.content) 
                     }}
@@ -192,26 +192,26 @@ export default function ChatPage() {
           </div>
 
           {/* Input */}
-          <div className="p-6 bg-gray-50 text-black border-t">
-            <div className="flex gap-3">
+          <div className="p-3 sm:p-6 bg-gray-50 text-black border-t">
+            <div className="flex gap-2 sm:gap-3">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={t.chat.typeQuestion}
-                className="flex-1 px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 disabled={loading}
               />
               <button
                 onClick={handleSend}
                 disabled={loading || !input.trim()}
-                className="px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors font-semibold"
+                className="px-4 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-full hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors font-semibold"
               >
                 {loading ? (
-                  <Loader2 className="w-6 h-6 animate-spin" />
+                  <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
                 ) : (
-                  <Send className="w-6 h-6" />
+                  <Send className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </button>
             </div>
@@ -224,7 +224,7 @@ export default function ChatPage() {
         </div>
 
         {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-8">
           {[
             {
               icon: <MessageSquare className="w-6 h-6" />,

@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-24 px-4 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-12 sm:py-16 md:py-24 px-4 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-green-400 rounded-full blur-3xl"></div>
@@ -102,7 +102,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold text-gray-900 mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -111,7 +111,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-gray-700 mb-4 font-semibold"
+              className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-3 sm:mb-4 font-semibold px-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -120,7 +120,7 @@ export default function Home() {
             </motion.p>
             
             <motion.p 
-              className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-green-50/30">
+      <section className="py-10 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-gray-50 to-green-50/30">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,7 +235,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-green-600 to-emerald-700 text-white relative overflow-hidden">
+      <section className="py-10 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-green-600 to-emerald-700 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -243,7 +243,7 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -251,15 +251,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6"
+                className="p-3 sm:p-6"
               >
                 <motion.div 
-                  className="text-6xl md:text-7xl font-bold mb-3"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-3"
                   whileHover={{ scale: 1.1 }}
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-green-100 text-xl font-medium">{stat.label}</div>
+                <div className="text-green-100 text-base sm:text-lg md:text-xl font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -267,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-white to-green-50">
+      <section className="py-12 sm:py-16 md:py-24 px-4 bg-gradient-to-br from-white to-green-50">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

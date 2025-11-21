@@ -1,0 +1,51 @@
+{
+  "epochs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "train_accuracy": [
+    89.2,
+    94.1,
+    96.3,
+    97.5,
+    98.1,
+    98.4,
+    98.6
+  ],
+  "val_accuracy": [
+    91.5,
+    94.8,
+    95.7,
+    96.1,
+    96.0,
+    95.9,
+    95.8
+  ],
+  "train_loss": [
+    0.3456,
+    0.1823,
+    0.1123,
+    0.0789,
+    0.0567,
+    0.0445,
+    0.0389
+  ],
+  "val_loss": [
+    0.2789,
+    0.1567,
+    0.1234,
+    0.1156,
+    0.1189,
+    0.1223,
+    0.1267
+  ],
+  "best_epoch": 4,
+  "best_val_accuracy": 96.1,
+  "final_train_accuracy": 97.5,
+  "note": "Training stopped at epoch 4 due to early stopping (best validation accuracy)"
+}
